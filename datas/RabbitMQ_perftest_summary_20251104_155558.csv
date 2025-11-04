@@ -1,0 +1,12 @@
+run_id,target_rate_msg_s,avg_sent_msg_s,avg_received_msg_s,worst_p95_ms,success,note,duration_s,producers,consumers,size_bytes,queue
+auto-r1000,1000,4004,4004,22,True,,15,4,4,1024,perf_queue
+auto-r2000,2000,8010,8010,38,True,,15,4,4,1024,perf_queue
+auto-r4000,4000,16026,16026,351,True,,15,4,4,1024,perf_queue
+auto-r8000,8000,32045,31573,682,True,,15,4,4,1024,perf_queue
+auto-r16000,16000,37190,34819,1268,False,ratio_below_0.95,16,4,4,1024,perf_queue
+auto-r12000,12000,37388,34903,1326,False,ratio_below_0.95,16,4,4,1024,perf_queue
+auto-r10000,10000,35577,33204,1415,False,ratio_below_0.95,16,4,4,1024,perf_queue
+auto-r9000,9000,34856,32267,1323,False,ratio_below_0.95,16,4,4,1024,perf_queue
+auto-r8500,8500,34054,33452,671,True,,15,4,4,1024,perf_queue
+auto-r8750,8750,34908,32850,1216,False,ratio_below_0.95,16,4,4,1024,perf_queue
+auto-r8625,8625,34566,34332,457,True,,15,4,4,1024,perf_queue

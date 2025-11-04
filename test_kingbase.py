@@ -205,9 +205,9 @@ def main():
     ap.add_argument("--cooldown", type=float, default=2.0, help="相邻两次运行之间的冷却秒数")
     ap.add_argument("--print_output", action="store_true", help="同时打印 kbbench 原始输出")
 
-    # 输出
-    ap.add_argument("--out", default=f"kbbench_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    help="结果 CSV 文件路径")
+    # 输出：默认保存到 datas/ 并包含组件名称
+    ap.add_argument("--component-name", default="KingbaseES", help="组件名称，写入文件名")
+    ap.add_argument("--out", default=None, help="结果 CSV 文件路径（留空则按组件名保存到 datas/）")
 
     args = ap.parse_args()
 
@@ -223,6 +223,12 @@ def main():
         "return_code",
         "error",
     ]
+
+    # 计算输出文件名
+    if not args.out:
+        os.makedirs("datas", exist_ok=True)
+        default_name = f"{args.component_name}_kbbench_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        args.out = os.path.join("datas", default_name)
 
     ensure_header(args.out, fieldnames)
 

@@ -1,0 +1,7 @@
+component,component_type,run_id,target_rate_msg_s,duration_s,avg_sent_msg_s,avg_received_msg_s,worst_p95_ms,producers,consumers,size_bytes,msg_per_sec_per_core,msg_per_sec_per_producer,msg_per_sec_per_consumer,msg_per_sec_per_gb_memory,msg_per_sec_per_kb,latency_per_msg_ms,memory_per_msg_bytes,throughput_mbps,cpu_utilization_pct,loss_ratio,test_cpu_cores,test_memory_gb
+RabbitMQ,MQ,auto-r1000,1000,15,4004,4004,22,4,4,1024,1001.0,1001.0,1001.0,1001.0,4004.0,22,1536.0,3.91,10.01,0.0,4,4.0
+RabbitMQ,MQ,auto-r2000,2000,15,8010,8010,38,4,4,1024,2002.5,2002.5,2002.5,2002.5,8010.0,38,1536.0,7.82,20.03,0.0,4,4.0
+RabbitMQ,MQ,auto-r4000,4000,15,16026,16026,351,4,4,1024,4006.5,4006.5,4006.5,4006.5,16026.0,351,1536.0,15.65,40.06,0.0,4,4.0
+RabbitMQ,MQ,auto-r8000,8000,15,32045,31573,682,4,4,1024,7893.25,7893.25,7893.25,7893.25,31573.0,682,1536.0,30.83,78.93,0.0147,4,4.0
+RabbitMQ,MQ,auto-r8500,8500,15,34054,33452,671,4,4,1024,8363.0,8363.0,8363.0,8363.0,33452.0,671,1536.0,32.67,83.63,0.0177,4,4.0
+RabbitMQ,MQ,auto-r8625,8625,15,34566,34332,457,4,4,1024,8583.0,8583.0,8583.0,8583.0,34332.0,457,1536.0,33.53,85.83,0.0068,4,4.0

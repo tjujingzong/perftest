@@ -1,6 +1,0 @@
-run_id,target_rate_msg_s,avg_sent_msg_s,avg_received_msg_s,worst_p95_ms,success,note,duration_s,producers,consumers,size_bytes,queue
-auto-r1000,1000,0,0,0,False,no_data,15,4,4,1024,perf_queue
-auto-r500,500,0,0,0,False,no_data,15,4,4,1024,perf_queue
-auto-r250,250,0,0,0,False,no_data,15,4,4,1024,perf_queue
-auto-r125,125,0,0,0,False,no_data,15,4,4,1024,perf_queue
-auto-r62,62,0,0,0,False,no_data,15,4,4,1024,perf_queue

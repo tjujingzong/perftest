@@ -56,7 +56,10 @@ def parse_args():
     p.add_argument("--java-opts", dest="java_opts", default="-Xms512m -Xmx1g", help="JAVA_OPTS for the perf-test JVM")
     p.add_argument("--id-prefix", default="auto", help="Prefix for run id shown by PerfTest")
     p.add_argument("--warmup-rate", type=int, default=0, help="Optional warmup rate (msg/s); 0 = skip warmup")
-    p.add_argument("--csv-prefix", default="perftest", help="Output CSV filename prefix")
+    # 输出目录与组件名；如未提供 csv-prefix，则按组件命名规范化到 datas/
+    p.add_argument("--out-dir", default="datas", help="Output directory (default: datas)")
+    p.add_argument("--component-name", default="RabbitMQ", help="Component name to embed in filenames")
+    p.add_argument("--csv-prefix", default=None, help="(Optional) legacy prefix; if set, overrides component-based naming")
     p.add_argument("--quiet", action="store_true", help="Do not stream perftest output")
     return p.parse_args()
 
@@ -207,8 +210,13 @@ def main():
     ensure_java_and_jar(args.jar)
 
     timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
-    ts_csv = f"{args.csv_prefix}_timeseries_{timestamp}.csv"
-    sum_csv = f"{args.csv_prefix}_summary_{timestamp}.csv"
+    if args.csv_prefix:
+        prefix = args.csv_prefix
+    else:
+        os.makedirs(args.out_dir, exist_ok=True)
+        prefix = os.path.join(args.out_dir, f"{args.component_name}_perftest")
+    ts_csv = f"{prefix}_timeseries_{timestamp}.csv"
+    sum_csv = f"{prefix}_summary_{timestamp}.csv"
 
     all_ts_rows, all_sum_rows = [], []
 

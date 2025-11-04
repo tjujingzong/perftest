@@ -1,0 +1,2 @@
+component,target_tps,max_latency_ms,required_cpu_cores,required_memory_gb,estimated_latency_ms,baseline_tps_per_core,baseline_tps_per_gb,baseline_test_tps,baseline_test_latency_ms
+KingbaseES,10000,60,23,23,276.83,436.99,436.99,1747.953251,48.388
